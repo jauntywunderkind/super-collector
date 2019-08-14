@@ -7,6 +7,15 @@ export function *SuperCollector( self, prop){
 		yield* SuperCollector( proto, prop)
 	}
 
+	// guard: only yield our own properties
+	if( !Object.getOwnPropertyDescriptor( self, prop)){
+		return
+	}
+	if( self.constructor=== proto.constructor){
+		return
+	}
+
+	// yield values
 	const values= self[ prop]
 	if( values=== undefined){
 		return
@@ -22,8 +31,15 @@ export function *SuperCollector( self, prop){
 export function *StaticSuperCollector( self, prop){
 	// recursively iterate all parents first
 	const proto= Object.getPrototypeOf( self)
-	if( proto!== Function.prototype){
+	if( proto!== Object.prototype){
 		yield* StaticSuperCollector( proto, prop)
+	}
+
+	if( !Object.getOwnPropertyDescriptor( self.constructor, prop)){
+		return
+	}
+	if( self.constructor=== proto.constructor){
+		return
 	}
 
 	const values= self.constructor[ prop]

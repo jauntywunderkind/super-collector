@@ -19,6 +19,9 @@ export class B extends A{
 }
 
 export class C extends B{
+}
+
+export class D extends C{
 	static get staticField(){
 		return [ 4, 5]
 	}
