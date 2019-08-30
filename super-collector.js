@@ -32,10 +32,8 @@ function instanceGuard( picked, prop){
 	return Object.getOwnPropertyDescriptor( picked, prop)
 }
 
-export function *StaticSuperCollector( self, prop, { pick , guard}= {}){
-	pick= pick|| staticPick
-	guard= guard|| staticGuard
-	return yield* SuperCollector( self, prop, pick, guard)
+export function *StaticSuperCollector( self, prop, opts= {}){
+	return yield* SuperCollector( self.constructor, prop, opts)
 }
 function staticPick( self){
 	return self.constructor

@@ -7,21 +7,36 @@ import { D} from "./fixture.js"
 tape( "collects instance properties", function( t){
 	const
 	  d= new D(),
-	  instances= [ ...SuperCollector( d, "instanceField")]
-	t.deepEqual( instances, [ "a", "b", "c", "d", "e"])
+	  instanceFields= [ ...SuperCollector( d, "instanceField")]
+	t.deepEqual( instanceFields, [ "a", "b", "c", "d", "e"])
 	t.end()
 })
 
 tape( "collects static properties", function( t){
 	const
 	  d= new D(),
-	  statics= [ ...StaticSuperCollector( d, "staticField")]
-	t.deepEqual( statics, [ 1, 2, 3, 4, 5])
+	  staticFields= [ ...StaticSuperCollector( d, "staticField")]
+	t.deepEqual( staticFields, [ 1, 2, 3, 4, 5])
 	t.end()
 })
 
 tape( "collects constructor properties", function( t){
-	const constrs= [ ...SuperCollector( D, "staticField")]
-	t.deepEqual( constrs, [ 1, 2, 3, 4, 5])
+	const staticFields= [ ...SuperCollector( D, "staticField")]
+	t.deepEqual( staticFields, [ 1, 2, 3, 4, 5])
 	t.end()
+})
+
+tape( "collects static bool property", function( t){
+	const bools= [ ...SuperCollector( D, "bool")]
+	t.deepEqual( bools, [ false, true ])
+	t.end()
+})
+
+tape( "returns nothing when there is nothing to find", function( t){
+	const
+	  d= new D(),
+	  nullSet= [ ...SuperCollector( D, "nopeNothing")]
+	t.deepEqual( nullSet, [])
+	t.end()
+
 })

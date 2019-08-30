@@ -7,6 +7,7 @@ export class A{
 	get instanceField(){
 		return [ "a", "b"]
 	}
+	static bool= false
 }
 
 export class B extends A{
@@ -19,6 +20,7 @@ export class B extends A{
 }
 
 export class C extends B{
+	static bool= true
 }
 
 export class D extends C{
