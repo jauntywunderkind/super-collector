@@ -1,19 +1,19 @@
 {
-	"name": "super-collector",
+	"name": "class-wrangle-helper",
 	"version": "1.0.0",
 	"description": "",
-	"main": "super-collector.js",
+	"main": "class-wrangle-helper.js",
 	"scripts": {
 		"test": "node -r esm .test"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://archive.eldergods.com/super-collector"
+		"url": "https://archive.eldergods.com/class-wrangle-helper"
 	},
 	"keywords": [],
 	"author": "jauntywunderkind",
 	"license": "MIT",
-	"module": "super-collector.js",
+	"module": "class-wrangle-helper.js",
 	"esm": true,
 	"devDependencies": {
 		"esm": "^3.2.25",
