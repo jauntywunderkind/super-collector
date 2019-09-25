@@ -21,6 +21,7 @@ export function PrototypeIterator( start, opts){
 	if( opts&& opts.start!== undefined){
 		this.value= opts.start? opts.start( start): start
 	}else if( opts&& opts.includeObject){
+		console.log("include-object")
 		this.value= start
 	}else{
 		this.value= this.advance( start)
