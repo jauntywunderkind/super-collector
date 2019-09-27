@@ -1,6 +1,6 @@
 "use module"
 import tape from "tape"
-import { SuperCollector, StaticSuperCollector} from ".."
+import { SuperCollector, StaticSuperCollector} from "../props-collect.js"
 
 import { D} from "./fixture.js"
 
