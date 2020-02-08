@@ -12,7 +12,7 @@ export function findPropDescriptor( o, prop, opts){
 		if( !desc){
 			continue
 		}
-		desc.name= prop
+		desc.property= prop
 		desc.proto= proto
 		return desc
 	}
