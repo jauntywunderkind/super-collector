@@ -2,7 +2,7 @@
 	"name": "class-wrangle-helper",
 	"type": "module",
 	"version": "1.0.0",
-	"description": "",
+	"description": "assorted class reading/munging utilities",
 	"main": "class-wrangle-helper.js",
 	"scripts": {
 		"test": "node -r esm .test"
