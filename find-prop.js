@@ -12,7 +12,8 @@ export function findPropDescriptor( o, prop, opts){
 		if( !desc){
 			continue
 		}
-		desc.property= prop
+		const nameKey= prop&& prop.constructor=== Symbol? "symbol": "property"
+		desc[ nameKey]= prop
 		desc.proto= proto
 		return desc
 	}
