@@ -1,5 +1,6 @@
 {
 	"name": "class-wrangle-helper",
+	"type": "module",
 	"version": "1.0.0",
 	"description": "",
 	"main": "class-wrangle-helper.js",
@@ -16,7 +17,9 @@
 	"module": "class-wrangle-helper.js",
 	"esm": true,
 	"devDependencies": {
+		"delay": "^4.3.0",
 		"esm": "^3.2.25",
+		"p-defer": "^3.0.0",
 		"tape": "^4.11.0"
 	}
 }
